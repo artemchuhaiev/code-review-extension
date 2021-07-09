@@ -1,0 +1,26 @@
+{
+  "name": "Code review extension",
+  "description": "Code review extension.",
+  "version": "0.1",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_icon": "logo.png"
+  },
+  "icons": {
+    "128": "logo.png"
+  },
+  "permissions" : [
+    "storage",
+    "notifications",
+    "http://*.gitlab.com/",
+    "https://*.gitlab.com/",
+    "http://*.gitlab-static.net/",
+    "https://*.gitlab-static.net/"
+  ],
+  "content_security_policy":"script-src 'self' https://www.gstatic.com/ https://*.firebaseio.com https://www.googleapis.com; object-src 'self'",
+  "background": {
+    "page": "background.html",
+    "persistent": true
+  }
+}
